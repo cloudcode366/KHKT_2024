@@ -1,6 +1,6 @@
-package com.wiramin.khkt.historymachine_2024.Repository;
+package com.wiramin.khkt.historymachine_2024.repository;
 
-import com.wiramin.khkt.historymachine_2024.Entity.Picture;
+import com.wiramin.khkt.historymachine_2024.entity.Picture;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

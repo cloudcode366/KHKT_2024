@@ -1,9 +1,6 @@
-package com.wiramin.khkt.historymachine_2024.Entity;
+package com.wiramin.khkt.historymachine_2024.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +11,7 @@ import lombok.Setter;
 public class Usertype {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO) // Hoặc UUID nếu dùng UUID
     private Integer id;
 
     @Column(name = "type", nullable = false, length = 50)

@@ -1,4 +1,4 @@
-package com.wiramin.khkt.historymachine_2024.Entity;
+package com.wiramin.khkt.historymachine_2024.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,8 +11,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "video")
-public class Video {
+@Table(name = "picture")
+public class Picture {
     @Id
     @ColumnDefault("newid()")
     @Column(name = "id", nullable = false)

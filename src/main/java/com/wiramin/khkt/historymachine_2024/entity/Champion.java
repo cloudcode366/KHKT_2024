@@ -1,4 +1,4 @@
-package com.wiramin.khkt.historymachine_2024.Entity;
+package com.wiramin.khkt.historymachine_2024.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
