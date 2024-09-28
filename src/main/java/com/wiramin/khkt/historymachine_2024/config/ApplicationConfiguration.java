@@ -1,6 +1,6 @@
 package com.wiramin.khkt.historymachine_2024.config;
 
-import com.wiramin.khkt.historymachine_2024.entity.UserRepository;
+import com.wiramin.khkt.historymachine_2024.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

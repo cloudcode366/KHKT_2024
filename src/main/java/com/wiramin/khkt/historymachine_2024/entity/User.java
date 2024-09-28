@@ -32,9 +32,8 @@ public class User implements UserDetails {
     private boolean isEnabled;
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)    private List<Lesson> lessons;
-
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Lesson> lessons;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,5 +1,6 @@
-package com.wiramin.khkt.historymachine_2024.entity;
+package com.wiramin.khkt.historymachine_2024.repository;
 
+import com.wiramin.khkt.historymachine_2024.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
