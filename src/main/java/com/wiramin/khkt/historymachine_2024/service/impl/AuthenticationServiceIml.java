@@ -6,6 +6,5 @@ import com.wiramin.khkt.historymachine_2024.model.RegisterRequest;
 import com.wiramin.khkt.historymachine_2024.service.AuthenticationService;
 
 public class AuthenticationServiceIml implements AuthenticationService {
-    AuthenticationResponse register(RegisterRequest request);
-    AuthenticationResponse login(AuthenticationRequest request);
+
 }
