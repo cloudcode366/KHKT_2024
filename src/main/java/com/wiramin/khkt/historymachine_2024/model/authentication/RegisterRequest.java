@@ -1,4 +1,4 @@
-package com.wiramin.khkt.historymachine_2024.model;
+package com.wiramin.khkt.historymachine_2024.model.authentication;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

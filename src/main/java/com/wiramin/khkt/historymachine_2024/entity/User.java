@@ -29,6 +29,7 @@ public class User implements UserDetails {
     private String password;
     private String email;
     private String phone;
+    @Column(columnDefinition = "BIT")
     private boolean isEnabled;
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -67,6 +68,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return UserDetails.super.isEnabled();
+        return isEnabled;
     }
 }

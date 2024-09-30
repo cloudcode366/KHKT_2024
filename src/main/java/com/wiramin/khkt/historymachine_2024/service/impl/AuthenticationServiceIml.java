@@ -4,9 +4,9 @@ import com.wiramin.khkt.historymachine_2024.Dto.UserDto;
 import com.wiramin.khkt.historymachine_2024.config.mapper.UserMapper;
 import com.wiramin.khkt.historymachine_2024.entity.Role;
 import com.wiramin.khkt.historymachine_2024.entity.User;
-import com.wiramin.khkt.historymachine_2024.model.AuthenticationRequest;
-import com.wiramin.khkt.historymachine_2024.model.AuthenticationResponse;
-import com.wiramin.khkt.historymachine_2024.model.RegisterRequest;
+import com.wiramin.khkt.historymachine_2024.model.authentication.AuthenticationRequest;
+import com.wiramin.khkt.historymachine_2024.model.authentication.AuthenticationResponse;
+import com.wiramin.khkt.historymachine_2024.model.authentication.RegisterRequest;
 import com.wiramin.khkt.historymachine_2024.repository.UserRepository;
 import com.wiramin.khkt.historymachine_2024.service.AuthenticationService;
 import com.wiramin.khkt.historymachine_2024.service.JwtService;
@@ -28,10 +28,13 @@ public class AuthenticationServiceIml implements AuthenticationService {
     public AuthenticationResponse register(RegisterRequest request) {
         User newUser = User.builder()
                 .email(request.getEmail())
+                .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.STUDENT)
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
+                .phone(request.getPhone())
+                .isEnabled(false)
                 .build();
         User createdUser = userRepository.save(newUser);
         String jwtToken = jwtService.generateToken(createdUser);

@@ -7,6 +7,6 @@ import org.mapstruct.Mapping;
 
 @Mapper (componentModel = "spring")
 public interface UserMapper {
-
+    @Mapping(target = "isEnabled", expression = "java(user.isEnabled())")
     UserDto userToUserDto(User user);
 }
