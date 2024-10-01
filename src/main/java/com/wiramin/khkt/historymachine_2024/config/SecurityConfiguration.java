@@ -1,5 +1,6 @@
 package com.wiramin.khkt.historymachine_2024.config;
 
+import com.wiramin.khkt.historymachine_2024.entity.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +26,8 @@ public class SecurityConfiguration {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/student/**").hasRole(Role.STUDENT.name())
+                        .requestMatchers("/api/v1/teacher/**").hasRole(Role.TEACHER.name())
                         .anyRequest()
                         .authenticated())
                 .sessionManagement(session ->

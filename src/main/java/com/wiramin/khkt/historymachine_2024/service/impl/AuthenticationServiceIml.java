@@ -66,4 +66,24 @@ public class AuthenticationServiceIml implements AuthenticationService {
                 .token(jwtToken)
                 .build();
     }
+
+    @Override
+    public AuthenticationResponse registerTeacher(RegisterRequest request) {
+        User newUser = User.builder()
+                .email(request.getEmail())
+                .username(request.getUsername())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(Role.TEACHER)
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .phone(request.getPhone())
+                .isEnabled(true)
+                .build();
+        User createdUser = userRepository.save(newUser);
+        String jwtToken = jwtService.generateToken(createdUser);
+        return AuthenticationResponse.builder()
+                .userDto(userMapper.userToUserDto(createdUser))
+                .token(jwtToken)
+                .build();
+    }
 }
