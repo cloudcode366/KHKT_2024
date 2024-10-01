@@ -26,8 +26,9 @@ public class SecurityConfiguration {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        .requestMatchers("/api/v1/student/**").hasRole(Role.STUDENT.name())
-                        .requestMatchers("/api/v1/teacher/**").hasRole(Role.TEACHER.name())
+                        .requestMatchers("/**").hasAnyAuthority(Role.ADMIN.name(), Role.TEACHER.name(), Role.STUDENT.name())
+                        .requestMatchers("/api/v1/student/**").hasAuthority(Role.STUDENT.name())
+                        .requestMatchers("/api/v1/teacher/**").hasAuthority(Role.TEACHER.name())
                         .anyRequest()
                         .authenticated())
                 .sessionManagement(session ->

@@ -31,4 +31,8 @@ public class StudentController {
     public ResponseEntity<?> deleteStudent(@PathVariable Long id) {
         return null;
     }
+    @GetMapping("/hello")
+    public ResponseEntity<?> hello() {
+        return ResponseEntity.ok("hello from student controller");
+    }
 }

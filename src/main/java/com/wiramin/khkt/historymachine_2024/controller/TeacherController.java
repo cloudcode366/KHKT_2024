@@ -42,4 +42,8 @@ public class TeacherController {
     public ResponseEntity<?> deleteLesson(@RequestBody List<Long> ids) {
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/hello")
+    public ResponseEntity<?> hello() {
+        return ResponseEntity.ok("Hello from teacher controller");
+    }
 }

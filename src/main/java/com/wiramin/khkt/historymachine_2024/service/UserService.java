@@ -8,7 +8,9 @@ import java.util.UUID;
 public interface UserService {
     void deleteUser(UUID id);
     void updateUser(User user);
-    User getUser(UUID id);
+    User getAllUser(UUID id);
     List<User> getUsers();
     void approveUser(List<UUID> id);
+    List<User> getAllStudent();
+    List<User> getAllTeacher();
 }
